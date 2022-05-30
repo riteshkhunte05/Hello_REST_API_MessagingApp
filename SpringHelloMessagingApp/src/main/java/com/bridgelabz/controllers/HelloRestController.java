@@ -45,6 +45,14 @@ public class HelloRestController {
         return "Hello "+user.getFirstName() + " " +user.getLastName() + "from BridgeLabz!!! ";
     }
 
+    // UC5 : Use PUT Request Method and pass first name as
+    //       Path Variable and last name as Query Parameter.
+    @PutMapping("/update/{firstName}")
+    public String sayHellotaylor (@PathVariable String firstName,@RequestParam String lastName,User user){
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        return "Hello "+user.getFirstName() + " " +user.getLastName() +"from BridgeLabz!!!";
+    }
     
 }
 
