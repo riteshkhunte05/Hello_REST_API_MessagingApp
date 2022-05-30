@@ -26,4 +26,14 @@ public class HelloRestController {
     public String sayHelloQuery(@RequestParam String name) {
         return "Hello " + name + " from BridgeLabz!!!";
     }
+
+
+    // UC3 : Use GET Request Method and pass name as
+    //       path variable.
+    //
+    @GetMapping("/param/{name}")
+    public String sayHelloParam(@PathVariable(value = "name") String name) {
+        return "Hello " + name + " from BridgeLabz!!!";
+    }
 }
+
