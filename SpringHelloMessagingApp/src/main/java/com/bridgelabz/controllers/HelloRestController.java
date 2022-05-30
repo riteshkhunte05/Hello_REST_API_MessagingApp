@@ -1,5 +1,6 @@
 package com.bridgelabz.controllers;
 
+import com.bridgelabz.Model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -35,5 +36,15 @@ public class HelloRestController {
     public String sayHelloParam(@PathVariable(value = "name") String name) {
         return "Hello " + name + " from BridgeLabz!!!";
     }
+
+    // UC4 : Use POST Request Method and pass first name and
+    //       last name in the Body.
+
+    @PostMapping (value = {"/create-user","/post"})
+    public String sayHello(@RequestBody User user){
+        return "Hello "+user.getFirstName() + " " +user.getLastName() + "from BridgeLabz!!! ";
+    }
+
+    
 }
 
